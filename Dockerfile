@@ -11,6 +11,7 @@ FROM dockerfile/nodejs-bower-gulp
 ONBUILD ADD package.json /app/
 ONBUILD RUN npm install
 ONBUILD ADD bower.json /app/
+ONBUILD ADD .bowerrc /app/
 ONBUILD RUN bower install --allow-root
 ONBUILD ADD . /app
 ONBUILD RUN gulp build
